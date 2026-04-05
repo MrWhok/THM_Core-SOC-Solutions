@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Introduction to EDR](#introduction-to-edr)
+2. [Introduction to SIEM](#introduction-to-siem)
 
 ## Introduction to EDR
 ### What is EDR?
@@ -69,3 +70,61 @@
 5. What was UpdateAgent.exe labelled by Threat Intel on DESKTOP-DEV01?
 
     The answer is `Known internal IT utility tool`.
+
+## Introduction to SIEM
+### Introduction
+1. What does SIEM stand for?
+
+    The answer is `Security Information and Event Management system`.
+
+### Logs Everywhere, Answers Nowhere
+1. Is Registry-related activity host-centric or network-centric?
+
+    The answer is `Host-centric`.
+
+2. Is VPN-related activity host-centric or network-centric?
+
+    The answer is `Network-centric`.
+
+### Log Sources and Ingestion
+1. In which location within a Linux environment are HTTP logs stored?
+
+    The answer is `/var/log/httpd/`.
+
+### Alerting Process and Analysis
+1. Which Event ID is generated when event logs are removed?
+
+    The answer is `104`.
+
+2. What type of alert may require tuning?
+
+    The answer is `False Positive`.
+
+### Lab Work
+1. After clicking on the Start Suspicious Activity button, which process caused the alert?
+
+    The answer is `cudominer.exe`.
+
+2. Find the event that caused the alert and identify the user responsible for the process execution.
+
+    The answer is `Chris`.
+
+3. What is the hostname of the suspect user?
+
+    The answer is `HR_02`.
+
+4. Examine the rule and the suspicious process; which term matched the rule that caused the alert?
+
+    The answer is `miner`.
+
+5. Which option best represents the event? Choose from the following:
+
+    - False Positive
+
+    - True Positive
+
+    The answer is `True Positive`.
+
+6. Selecting the right ACTION will display the FLAG. What is the FLAG?
+
+    The answer is `THM{000_SIEM_INTRO}`.
