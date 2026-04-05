@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Introduction to EDR](#introduction-to-edr)
 2. [Introduction to SIEM](#introduction-to-siem)
+3. [Splunk: The Basics](#splunk-the-basics)
 
 ## Introduction to EDR
 ### What is EDR?
@@ -128,3 +129,56 @@
 6. Selecting the right ACTION will display the FLAG. What is the FLAG?
 
     The answer is `THM{000_SIEM_INTRO}`.
+
+## Splunk: The Basics
+### Splunk Components
+1. Which component is used to collect and send data over the Splunk instance?
+
+    The answer is `Forwarder`.
+
+### Navigating Splunk
+1. In the Add Data tab, which option is used to collect data from files and ports?
+
+    The answer is `Monitor`.
+
+### Adding Data
+1. Upload the data attached to this task and create an index "VPN_Logs". How many events are present in the log file?
+
+    The answer is `2862`.
+
+2. How many log events are captured by the user Maleena?
+
+    We can use this filter to find the answer: 
+
+    ```json
+    source="VPN-logs-1663593355154.json" host="ip-10-10-40-195" sourcetype="_json" UserName=Maleena
+    ```
+    The answer is `60`.
+
+3. What is the username associated with IP 107.14.182.38?
+
+    We can use this filter to find the answer: 
+
+    ```json
+    source="VPN-logs-1663593355154.json" host="ip-10-10-40-195" sourcetype="_json" Source_ip=107.14.182.38
+    ```
+    The answer is `Smith`.
+
+4. What is the number of events that originated from all countries except France?
+
+    We can use this filter to find the answer: 
+
+    ```json
+    source="VPN-logs-1663593355154.json" host="ip-10-10-40-195" sourcetype="_json" NOT Source_Country=France
+    ```
+    The answer is `2814`.
+
+5. How many VPN events were associated with the IP 107.3.206.58?
+
+    We can use this filter to find the answer: 
+
+    ```json
+    source="VPN-logs-1663593355154.json" host="ip-10-10-40-195" sourcetype="_json" Source_ip=107.3.206.58
+    ```
+
+    The answer is `14`.
