@@ -5,6 +5,7 @@
 2. [Introduction to SIEM](#introduction-to-siem)
 3. [Splunk: The Basics](#splunk-the-basics)
 4. [Elastic Stack: The Basics](#elastic-stack-the-basics)
+5. [Introduction to SOAR](#introduction-to-soar)
 
 ## Introduction to EDR
 ### What is EDR?
@@ -252,3 +253,36 @@
 2. How many wrong VPN connection attempts were observed in January?
 
     The answer is `274`.
+
+## Introduction to SOAR
+### Traditional SOC and Challenges
+1. How would you describe the experience of an overload of security events being triggered within a SOC?
+
+    The answer is `Alert Fatigue`.
+
+### Overcoming SOC Challenges with SOAR
+1. The act of connecting and integrating security tools and systems into seamless workflows is known as?
+
+    The answer is `Orchestration`.
+
+2. What do we call a predefined list of actions to handle an incident?
+
+    The answer is `Playbook`.
+
+### Building SOAR Playbooks
+1. Is manual analysis vital within a SOAR workflow? Yay or Nay?
+
+    The answer is `yay`.
+
+2. From where is the CVE Patching playbook fetching the new CVEs?
+
+    The answer is `Advisory lists`.
+
+3. In the CVE Patching playbook, if the assets are found vulnerable even after the patch is deployed, what does the SOC develop next?
+
+    The answer is `mitigation plan`.
+
+### Threat Intel Workflow Practical
+1. What is the flag received?
+
+    The answer is `THM{AUT0M@T1N6_S3CUR1T¥}`.
