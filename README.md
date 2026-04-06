@@ -4,6 +4,7 @@
 1. [Introduction to EDR](#introduction-to-edr)
 2. [Introduction to SIEM](#introduction-to-siem)
 3. [Splunk: The Basics](#splunk-the-basics)
+4. [Elastic Stack: The Basics](#elastic-stack-the-basics)
 
 ## Introduction to EDR
 ### What is EDR?
@@ -182,3 +183,72 @@
     ```
 
     The answer is `14`.
+
+
+## Elastic Stack: The Basics
+### Elastic Stack Overview
+1. Logstash is used to visualize the data. (yay / nay)
+
+    The answer is `nay`. Logstash is used to collect data from various source (one of the is beats), parse, and store data to the Elasticsearch database. 
+
+2. Elasticstash supports all data formats apart from JSON. (yay / nay)
+
+    The answer is `nay`. 
+
+### Discover Tab
+1. Select the index vpn_connections and filter from 31st December 2021 to 2nd Feb 2022. How many hits are returned?
+
+    The answer is `2861`.
+
+2. Which IP address has the maximum number of connections?
+
+    The answer is `238.163.231.224`.
+
+3. Which user is responsible for the overall maximum traffic?
+
+    The answer is `James`.
+
+4. Apply Filter on UserName Emanda; which SourceIP has max hits?
+
+    The answer is `107.14.1.247`.
+
+5. On 11th Jan, which IP caused the spike observed in the time chart?
+
+    The answer is `172.201.60.191`.
+
+6. How many connections were observed from IP 238.163.231.224, excluding the New York state?
+
+    The answer is `48`.
+
+### KQL Overview
+1. Create a search query to filter the logs where Source_Country is the United States and show logs from User James or Albert. How many records were returned?
+
+    We can use this filter to find the answer: 
+
+    ```kql
+    Source_Country: "United States"  AND (UserName: "James" OR "Albert")
+    ```
+    The answer is `161`.
+
+2. A user Johny Brown was terminated on the 1st of January, 2022. Create a search query to determine how many times a VPN connection was observed after his termination.
+
+    We can use this filter to find the answer: 
+
+    ```kql
+    UserName: "Johny Brown" AND action: "built" AND @timestamp >= "2022-01-01T00:00:00Z"
+    ```
+    action: "built" is used to filter the logs where a connection was established. The answer is `1`.
+
+### Creating Visualizations
+1. Which user was observed with the greatest number of failed attempts?
+
+    We can go to `visualize library` and apply the following filters to find the answer:
+
+    ```kql
+    action: "failed"
+    ```
+    Then, we can drag username. The answer is `Simon`.
+
+2. How many wrong VPN connection attempts were observed in January?
+
+    The answer is `274`.
